@@ -1,0 +1,22 @@
+{
+  "name": "starport",
+  "version": "1.0.0",
+  "description": "아정웹 Severless",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mobile-command-center/Starport.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mobile-command-center/Starport/issues"
+  },
+  "homepage": "https://github.com/mobile-command-center/Starport#readme",
+  "dependencies": {
+    "serverless": "^1.45.1"
+  }
+}
