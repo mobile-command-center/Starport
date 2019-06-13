@@ -4,7 +4,9 @@
   "description": "아정웹 Severless",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --config ./.mocharc.json",
+    "deploy": "npx severless deploy",
+    "start": "npx severless offline"
   },
   "repository": {
     "type": "git",
@@ -18,5 +20,17 @@
   "homepage": "https://github.com/mobile-command-center/Starport#readme",
   "dependencies": {
     "serverless": "^1.45.1"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.7",
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4",
+    "nodeman": "^1.1.2",
+    "serverless-offline": "^5.3.3",
+    "serverless-webpack": "^5.3.1",
+    "ts-loader": "^6.0.2",
+    "typescript": "^3.5.2",
+    "webpack": "^4.34.0"
   }
 }
