@@ -1,5 +1,5 @@
 import * as AWS from 'aws-sdk';
-import { APIGatewayEvent, Context, Handler, Callback } from 'aws-lambda';
+import { APIGatewayEvent, Handler } from 'aws-lambda';
 import 'source-map-support/register';
 import RentalFormData from './model/RentalFormData';
 import TelecomFormData from './model/telecomFormData';
@@ -15,10 +15,7 @@ const mailInfo = {
   to: "pursuelowprice@naver.com"
 }
 
-export const rentalRegister: Handler = async (event: APIGatewayEvent, context: Context, cb: Callback) => {
-  console.log('Remaining time: ', context.getRemainingTimeInMillis())
-  console.log('Function name: ', context.functionName)
-
+export const rentalRegister: Handler = async (event: APIGatewayEvent) => {
   try {
     const body = await BodyParser(event);
     delete body['files']; 
@@ -30,15 +27,15 @@ export const rentalRegister: Handler = async (event: APIGatewayEvent, context: C
     
     await registerService.sendEmail(mailInfo);
 
-    cb(null, {
+    return {
       statusCode: 200,
       headers: {
         "Access-Control-Allow-Origin": "*"
       },
       body: '가입 신청서가 성공적으로 전송되었습니다.'
-    });
+    };
   } catch(e) {
-    cb(null, {
+    return {
       statusCode: 200,
       headers: {
         "Access-Control-Allow-Origin": "*"
@@ -47,14 +44,11 @@ export const rentalRegister: Handler = async (event: APIGatewayEvent, context: C
         message: '가입 신청서 전송이 실패하였습니다.',
         input: e
       }
-    });
+    };
   }
 }
 
-export const telecomRegister: Handler = async (event: APIGatewayEvent, context: Context, cb: Callback) => {
-  console.log('Remaining time: ', context.getRemainingTimeInMillis())
-  console.log('Function name: ', context.functionName)
-
+export const telecomRegister: Handler = async (event: APIGatewayEvent) => {
   try {
     const body = await BodyParser(event);
     delete body['files']; 
@@ -66,15 +60,15 @@ export const telecomRegister: Handler = async (event: APIGatewayEvent, context: 
     
     await telecomService.sendEmail(mailInfo);
 
-    cb(null, {
+    return {
       statusCode: 200,
       headers: {
         "Access-Control-Allow-Origin": "*"
       },
       body: '가입 신청서가 성공적으로 전송되었습니다.'
-    });
+    };
   } catch(e) {
-    cb(null, {
+    return {
       statusCode: 200,
       headers: {
         "Access-Control-Allow-Origin": "*"
@@ -83,6 +77,6 @@ export const telecomRegister: Handler = async (event: APIGatewayEvent, context: 
         message: '가입 신청서 전송이 실패하였습니다.',
         input: e
       }
-    });
+    };
   }
 }

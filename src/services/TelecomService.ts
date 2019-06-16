@@ -66,23 +66,23 @@ export default class TelecomService {
         <h3>상품 정보</h3>
         약정 기간 : ${productInfo.countractDue} <br>`;
 
-        if(productInfo.internet !== '') {
+        if(productInfo.internet && productInfo.internet !== '') {
             body += `인터넷 상품 : ${productInfo.internet} <br>`;
         }
 
-        if(productInfo.tv !== '') {
+        if(productInfo.tv && productInfo.tv !== '') {
             body += `TV 상품 : ${productInfo.tv} <br>`;
         }
         
-        if(productInfo.settoppBox !== '') {
+        if(productInfo.settoppBox && productInfo.settoppBox !== '') {
             body += `셋텁박스 상품 : ${productInfo.settoppBox} <br>`;
         }
         
-        if(productInfo.wireless !== '') {
+        if(productInfo.wireless && productInfo.wireless !== '') {
             body += `WiFi 상품 : ${productInfo.wireless} <br>`;
         }
 
-        if(productInfo.telephone !== '') {
+        if(productInfo.telephone && productInfo.telephone !== '') {
             body += `전화 상품 : ${productInfo.telephone} <br>`;
 
             if(telephoneInfo.carrierMoveCheck) {
