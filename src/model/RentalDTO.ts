@@ -1,10 +1,10 @@
-import originFormData from './originFormData';
+import rentalFormData from './rentalFormData';
 import { getBankNameByBankCode, getCardNameByCardCode, getGiftCardNameByCode } from '../utils/FinancialUtil';
 
-export default class RegisterDTO {
-    private formData: originFormData;
+export default class RentalDTO {
+    private formData: rentalFormData;
 
-    constructor(formData: originFormData) {
+    constructor(formData: rentalFormData) {
         this.formData = formData;
     }
 

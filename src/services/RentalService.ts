@@ -2,23 +2,23 @@ import * as nodemailer from 'nodemailer';
 import * as moment from 'moment';
 import * as aws from 'aws-sdk';
 import {v1 as uuidv1} from 'uuid';
-import RegisterDTO from '../model/RegisterDTO';
-aws.config.loadFromPath(__dirname+'/../resources/aws_config.json');
+import RentalDTO from '../model/RentalDTO';
 
-export default class RegisterService {
-    private static _instance: RegisterService;
+
+export default class RentalService {
+    private static _instance: RentalService;
     private _transporter: nodemailer.Transporter;
-    private _registerDTO: RegisterDTO;
+    private _rentalDTO: RentalDTO;
 
-    public static getInstance(options: {user: string, pass: string}): RegisterService {
+    public static getInstance(): RentalService {
         if(!this._instance) {
-            this._instance = new RegisterService(options);
+            this._instance = new RentalService();
         }
 
         return this._instance;
     }
 
-    private constructor(options: {user: string, pass: string}) {
+    private constructor() {
         this._transporter = nodemailer.createTransport({
             SES: new aws.SES({
                 apiVersion: '2010-12-01'
@@ -27,10 +27,10 @@ export default class RegisterService {
     }
 
     private getMailBody(): string {
-        const customerInfo = this._registerDTO.CustomerInfo;
-        const paymentInfo = this._registerDTO.PaymentInfo;
-        const paybackInfo = this._registerDTO.PaybackInfo;
-        const productInfo = this._registerDTO.ProductInfo;
+        const customerInfo = this._rentalDTO.CustomerInfo;
+        const paymentInfo = this._rentalDTO.PaymentInfo;
+        const paybackInfo = this._rentalDTO.PaybackInfo;
+        const productInfo = this._rentalDTO.ProductInfo;
 
         let body = `<html><head></head><body>
             <h2>가전 렌탈 가입 신청서</h2>
@@ -44,7 +44,7 @@ export default class RegisterService {
             생년월일 : ${customerInfo.birthday}<br>
             휴대폰 : ${customerInfo.mobileCarrier} ${customerInfo.mobileNumber} (${customerInfo.mobileAuth ? '본인': '본안아님'}) <br>
             주소 : ${customerInfo.zipCode} ${customerInfo.address} ${customerInfo.address2}<br>
-            약관 동의 : <input type="checkbox" checked="${this._registerDTO.AgreeContrat ? 'checked' : ''}"><br>
+            약관 동의 : <input type="checkbox" checked="${this._rentalDTO.AgreeContrat ? 'checked' : ''}"><br>
             
             <h3>납부 정보 (${paymentInfo.paymentMethod})</h3>`;
         
@@ -67,14 +67,14 @@ export default class RegisterService {
         가입 상품 : ${productInfo.types.join(' ')} <br>`;
         
         body += `<h3>요청사항</h3>
-        ${this._registerDTO.Remarks}
+        ${this._rentalDTO.Remarks}
         </body></html>`;
 
         return body;
     }
 
-    public setRegisterDTO(registerDTO: RegisterDTO) {
-        this._registerDTO = registerDTO;
+    public setRentalDTO(registerDTO: RentalDTO) {
+        this._rentalDTO = registerDTO;
     }
 
     public async verifyConnection() {
@@ -94,7 +94,7 @@ export default class RegisterService {
         if(!this._transporter) return;
 
         return new Promise((resolve, reject) => {
-            const customerInfo = this._registerDTO.CustomerInfo;
+            const customerInfo = this._rentalDTO.CustomerInfo;
 
             const mailOptions = {
                 from: options.from,
@@ -105,6 +105,7 @@ export default class RegisterService {
 
             this._transporter.sendMail(mailOptions, (error: any, info: any) => {
                 if(error) {
+                    console.log(JSON.stringify(error));
                     return reject(error);
                 }
                 return resolve(info);

@@ -1,11 +1,10 @@
 import * as nodemailer from 'nodemailer';
-import RegisterService from './RegisterService';
-import originFormData from '../model/originFormData';
-import * as fs from 'fs';
-import RegisterDTO from '../model/RegisterDTO';
-const pkg = JSON.parse(fs.readFileSync('package.json', 'utf8'))
+import RegisterService from './RentalService';
+import rentalFormData from '../model/rentalFormData';
+import RentalDTO from '../model/RentalDTO';
+import RentalService from './RentalService';
 
-const LGSampleData: originFormData = {
+const LGSampleData: rentalFormData = {
     c_name: '테스트',
     c_tel2_type: 'LG',
     c_tel21: '010',
@@ -39,19 +38,16 @@ const LGSampleData: originFormData = {
 }
 
 describe('Register Service', () => {
-    let registerService: RegisterService;
+    let registerService: RentalService;
 
     before(function(done) {
         this.timeout(0); //before일때만 timeout 제한이 없음
 
-        nodemailer.createTestAccount((err, account) => {
+        nodemailer.createTestAccount((err) => {
             if(err) {
                 done(err);
             }
-            registerService = RegisterService.getInstance({
-                user: pkg.mailInfo.user,
-                pass: pkg.mailInfo.pass,
-            });
+            registerService = RegisterService.getInstance();
             done();
         });
     });
@@ -68,7 +64,7 @@ describe('Register Service', () => {
             to: 'myraous@gmail.com',
         };
 
-        registerService.setRegisterDTO(new RegisterDTO(LGSampleData));
+        registerService.setRentalDTO(new RentalDTO(LGSampleData));
         registerService.sendEmail(mailOptions).then((info) => {
             console.log(info);
             done();

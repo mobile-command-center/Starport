@@ -1,4 +1,4 @@
-export default interface originFormData {
+export default interface rentalFormData {
     c_name: string;// 김진구
     c_tel2_type: string; //LG알뜰폰
     c_tel21: string; //010

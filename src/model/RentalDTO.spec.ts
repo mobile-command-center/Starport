@@ -1,9 +1,9 @@
 import {expect} from 'chai';
-import originFormData from './originFormData';
-import RegisterDTO, { CustomerInfo, ProductInfo, PaybackInfo, PaymentInfo } from './RegisterDTO';
+import rentalFormData from './rentalFormData';
+import RentalDTO, { CustomerInfo, ProductInfo, PaybackInfo, PaymentInfo } from './RentalDTO';
 import { getBankNameByBankCode, getCardNameByCardCode, getGiftCardNameByCode } from '../utils/FinancialUtil';
 
-const LGSampleData: originFormData = {
+const LGSampleData: rentalFormData = {
     c_name: '테스트',
     c_tel2_type: 'LG',
     c_tel21: '010',
@@ -35,11 +35,11 @@ const LGSampleData: originFormData = {
     g_bigo: '',
     w_agree: 'true' 
 }
-describe('RegisterDTO', () => {
-    let registerDTO: RegisterDTO;
+describe('RentalDTO', () => {
+    let registerDTO: RentalDTO;
 
     before(() => {
-        registerDTO = new RegisterDTO(LGSampleData);
+        registerDTO = new RentalDTO(LGSampleData);
     })
 
     it('getter CustomerInfo', () => {
