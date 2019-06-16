@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha --config ./.mocharc.json",
-    "deploy": "npx severless deploy",
-    "start": "npx severless offline"
+    "deploy": "npx sls deploy",
+    "start": "npx sls offline start --port 3001",
+    "local": "npx sls invoke local -f register"
   },
   "repository": {
     "type": "git",
@@ -25,13 +26,18 @@
   "dependencies": {
     "@types/nodemailer": "^6.2.0",
     "aws-sdk": "^2.476.0",
+    "busboy": "^0.3.1",
     "moment": "^2.24.0",
     "nodemailer": "^6.2.1",
-    "serverless": "^1.45.1"
+    "serverless": "^1.45.1",
+    "serverless-plugin-typescript": "^1.1.7",
+    "source-map-support": "^0.5.12"
   },
   "devDependencies": {
+    "@types/aws-lambda": "^8.10.27",
     "@types/chai": "^4.1.7",
     "@types/mocha": "^5.2.7",
+    "@types/node": "^12.0.8",
     "chai": "^4.2.0",
     "mocha": "^6.1.4",
     "nodeman": "^1.1.2",
