@@ -1,9 +1,9 @@
 import {expect} from 'chai';
-import rentalFormData from './rentalFormData';
+import RentalFormData from './RentalFormData';
 import RentalDTO, { CustomerInfo, ProductInfo, PaybackInfo, PaymentInfo } from './RentalDTO';
 import { getBankNameByBankCode, getCardNameByCardCode, getGiftCardNameByCode } from '../utils/FinancialUtil';
 
-const LGSampleData: rentalFormData = {
+const LGSampleData: RentalFormData = {
     c_name: '테스트',
     c_tel2_type: 'LG',
     c_tel21: '010',

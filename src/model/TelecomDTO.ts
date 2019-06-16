@@ -1,13 +1,17 @@
-import RentalFormData from './RentalFormData';
-import { getBankNameByBankCode, getCardNameByCardCode, getGiftCardNameByCode } from '../utils/FinancialUtil';
+import TelecomFormData from './TelecomFormData';
+import { getBankNameByBankCode, getCardNameByCardCode, getGiftCardNameByCode } from '../../../Barracks/src/util/FinancialUtil';
 
-export default class RentalDTO {
-    private formData: RentalFormData;
+export default class TelecomDTO {
+    private formData: TelecomFormData;
 
-    constructor(formData: RentalFormData) {
+    constructor(formData: TelecomFormData) {
         this.formData = formData;
     }
 
+    //가입 통신사
+    get vendor(): string {
+        return this.formData.vendor;
+    }
 
     /** 
      * 고객 정보
@@ -17,11 +21,13 @@ export default class RentalDTO {
             name: this.formData.c_name,
             mobileCarrier: this.formData.c_tel2_type,
             mobileNumber: `${this.formData.c_tel21}-${this.formData.c_tel22}-${this.formData.c_tel23}`,
-            mobileAuth: this.formData.g_auth ? true : false,
+            mobileAuth: Boolean(this.formData.g_auth),
+            emgencyNumber: `${this.formData.c_tel11}-${this.formData.c_tel12}-${this.formData.c_tel13}`,
+            email: `${this.formData.c_email1}@${this.formData.c_email2}`,
             zipCode: `${this.formData.c_zipcode1}-${this.formData.c_zipcode2}`,
             address: this.formData.c_address,
             address2: this.formData.c_address2,
-            birthday: `${this.formData.c_jumin1}`
+            securityNumber: `${this.formData.c_jumin1}${this.formData.c_jumin2}`
         }
     }
 
@@ -30,9 +36,23 @@ export default class RentalDTO {
      */
     public get ProductInfo(): ProductInfo {
         return {
-            vendor: this.formData.p_vendor,
-            types: this.formData.p_product,
-            countractDue: this.formData.p_promise
+            internet: this.formData.board_internet,
+            tv: this.formData.board_tv,
+            telephone: this.formData.board_tel,
+            settoppBox: this.formData.board_settop,
+            wireless: this.formData.board_wifi,
+            countractDue: this.formData.g_code_promise
+        }
+    }
+
+    //유선 전화 이전계약 정보
+    public get PrevTelephoneContractInfo(): TelephoneContractInfo {
+        return {
+            carrierMoveCheck: Boolean(this.formData.telephone_carrier_move_chk),
+            carrier: this.formData.g_move_company,
+            phoneNumber: this.formData.g_move_tel1,
+            authMethod: this.formData.g_move_auth,
+            authCode: Number(this.formData.g_move_no)
         }
     }
 
@@ -81,15 +101,20 @@ export interface CustomerInfo {
     mobileCarrier: string; //통신사
     mobileNumber: string; //핸드폰 번호
     mobileAuth: boolean; //본인 여부
+    emgencyNumber: string; //비상연락처
+    email: string; //이메일 주소
     zipCode: string; //우편번호
     address: string; //주소
     address2: string; //상세 주소
-    birthday: string //생년월일
+    securityNumber: string //주민번호
 }
 
 export interface ProductInfo {
-    vendor: string[]; //가입 회사
-    types: string[]; //가입 상품
+    internet: string; //인터넷 가입 상품
+    tv: string; //TV가입 상품
+    telephone: string; //전화 상품
+    settoppBox: string; //셋텁박스
+    wireless: string; //와이파이
     countractDue: string; //약정 기간
 }
 
@@ -109,4 +134,12 @@ export interface PaymentInfo {
     cardNumber: string; //카드 번호
     cardExpirationDate: string; //카드 유효기간
     cardHolder: string; //카드주
+}
+
+export interface TelephoneContractInfo {
+    carrierMoveCheck: boolean; //유선전화 통신사 변경 여부
+    carrier: string; //기존 유선전화 통신사
+    phoneNumber: string; //기존 유선전화 번호
+    authMethod: string; //기존 유선전화 변경 인증방식
+    authCode: number; //기존 유선전화 변경 인증번호
 }

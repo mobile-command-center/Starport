@@ -1,6 +1,7 @@
+import * as AWS from 'aws-sdk';
 import * as nodemailer from 'nodemailer';
 import RegisterService from './RentalService';
-import rentalFormData from '../model/rentalFormData';
+import rentalFormData from '../model/RentalFormData';
 import RentalDTO from '../model/RentalDTO';
 import RentalService from './RentalService';
 
@@ -37,8 +38,10 @@ const LGSampleData: rentalFormData = {
     w_agree: 'true' 
 }
 
-describe('Register Service', () => {
-    let registerService: RentalService;
+AWS.config.region = 'us-west-2';
+
+describe('RentalService Service', () => {
+    let rentalService: RentalService;
 
     before(function(done) {
         this.timeout(0); //before일때만 timeout 제한이 없음
@@ -47,13 +50,13 @@ describe('Register Service', () => {
             if(err) {
                 done(err);
             }
-            registerService = RegisterService.getInstance();
+            rentalService = RegisterService.getInstance();
             done();
         });
     });
 
     it('verify SMTP connection', done => {
-        registerService.verifyConnection().then(()=> {
+        rentalService.verifyConnection().then(()=> {
             done();
         });
     }).timeout(5000);
@@ -64,8 +67,8 @@ describe('Register Service', () => {
             to: 'myraous@gmail.com',
         };
 
-        registerService.setRentalDTO(new RentalDTO(LGSampleData));
-        registerService.sendEmail(mailOptions).then((info) => {
+        rentalService.setRentalDTO(new RentalDTO(LGSampleData));
+        rentalService.sendEmail(mailOptions).then((info) => {
             console.log(info);
             done();
         });

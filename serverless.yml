@@ -16,10 +16,18 @@ provider:
   stage: dev
 
 functions:
-  register:
+  rentalregister:
     handler: src/handler.rentalRegister
     events:
       - http:
           method: post
           path: starport/v1/rental
           cors: true
+  telecomregister:
+    handler: src/handler.telecomRegister
+    events:
+      - http:
+          method: post
+          path: starport/v1/telecom
+          cors: true
+  
