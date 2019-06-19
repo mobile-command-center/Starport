@@ -32,6 +32,8 @@ export default class RentalDTO {
         return {
             vendor: this.formData.p_vendor,
             types: this.formData.p_product,
+            names: this.formData.p_product_name,
+            colors: this.formData.p_product_color,
             countractDue: this.formData.p_promise
         }
     }
@@ -89,7 +91,9 @@ export interface CustomerInfo {
 
 export interface ProductInfo {
     vendor: string[]; //가입 회사
-    types: string[]; //가입 상품
+    types: string[]; //가입 상품,
+    names: string; //상품명들
+    colors: string; //색상들
     countractDue: string; //약정 기간
 }
 

@@ -64,7 +64,9 @@ export default class RentalService {
         <h3>상품 정보</h3>
         약정 기간 : ${productInfo.countractDue} <br>
         가입 회사 : ${productInfo.vendor.join(' ')} <br>
-        가입 상품 : ${productInfo.types.join(' ')} <br>`;
+        가입 상품 : ${productInfo.types.join(' ')} <br>
+        상품명 : ${productInfo.names} <br>
+        색상 : ${productInfo.colors} <br>`;
         
         body += `<h3>요청사항</h3>
         ${this._rentalDTO.Remarks}

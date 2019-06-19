@@ -16,6 +16,8 @@ const mailInfo = {
 }
 
 export const rentalRegister: Handler = async (event: APIGatewayEvent) => {
+  console.log(event.requestContext.identity.userAgent);
+
   try {
     const body = await BodyParser(event);
     delete body['files']; 
@@ -53,6 +55,8 @@ export const rentalRegister: Handler = async (event: APIGatewayEvent) => {
 }
 
 export const telecomRegister: Handler = async (event: APIGatewayEvent) => {
+  console.log(event.requestContext.identity.userAgent);
+
   try {
     const body = await BodyParser(event);
     delete body['files']; 

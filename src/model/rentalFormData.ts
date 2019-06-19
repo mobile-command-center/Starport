@@ -26,6 +26,8 @@ export default interface RentalFormData {
     g_sp_giftcard_code: string; //1, 2
     p_vendor: string[]; //[LG, '']
     p_product: string[]; // ['정수기', '공기청정기', '']
+    p_product_name: string; //(정수기)WD502AS
+    p_product_color: string; //(정수기)그레이
     p_promise: string; //3년약정
     g_bigo: string; //비고란이다 ㅎㅎㅎ
     w_agree: string; //true

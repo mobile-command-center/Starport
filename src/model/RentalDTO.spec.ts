@@ -31,6 +31,8 @@ const LGSampleData: RentalFormData = {
     g_sp_bank_holder: '테스트',
     p_vendor: [ 'LG', '' ],
     p_product: [ '정수기', '공기청정기', '' ],
+    p_product_name: '(정수기)WD502AS, (건조기)RH16WC',
+    p_product_color: '(정수기)그레이',
     p_promise: '3년약정',
     g_bigo: '',
     w_agree: 'true' 
@@ -73,6 +75,8 @@ describe('RentalDTO', () => {
 
         expect(productInfo.vendor).to.deep.equal(LGSampleData.p_vendor);
         expect(productInfo.types).to.deep.equal(LGSampleData.p_product);
+        expect(productInfo.names).to.deep.equal(LGSampleData.p_product_name);
+        expect(productInfo.colors).to.deep.equal(LGSampleData.p_product_color);
         expect(productInfo.countractDue).to.equal(LGSampleData.p_promise);
     });
 
