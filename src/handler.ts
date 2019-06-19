@@ -30,20 +30,24 @@ export const rentalRegister: Handler = async (event: APIGatewayEvent) => {
     return {
       statusCode: 200,
       headers: {
-        "Access-Control-Allow-Origin": "*"
+        "Access-Control-Allow-Origin": "*",
+        "Content-Type": "text/plain; charset=utf-8"
       },
-      body: '가입 신청서가 성공적으로 전송되었습니다.'
+      body: '가입 신청서가 성공적으로 전송되었습니다.',
+      isBase64Encoded: false
     };
   } catch(e) {
     return {
       statusCode: 200,
       headers: {
-        "Access-Control-Allow-Origin": "*"
+        "Access-Control-Allow-Origin": "*",
+        "Content-Type": "text/plain; charset=utf-8"
       },
       body: {
         message: '가입 신청서 전송이 실패하였습니다.',
         input: e
-      }
+      },
+      isBase64Encoded: false
     };
   }
 }
@@ -63,20 +67,24 @@ export const telecomRegister: Handler = async (event: APIGatewayEvent) => {
     return {
       statusCode: 200,
       headers: {
-        "Access-Control-Allow-Origin": "*"
+        "Access-Control-Allow-Origin": "*",
+        "Content-Type": "text/plain; charset=utf-8"
       },
-      body: '가입 신청서가 성공적으로 전송되었습니다.'
+      body: '가입 신청서가 성공적으로 전송되었습니다.',
+      isBase64Encoded: false
     };
   } catch(e) {
     return {
       statusCode: 200,
       headers: {
-        "Access-Control-Allow-Origin": "*"
+        "Access-Control-Allow-Origin": "*",
+        "Content-Type": "text/plain; charset=utf-8"
       },
       body: {
         message: '가입 신청서 전송이 실패하였습니다.',
         input: e
-      }
+      },
+      isBase64Encoded: false
     };
   }
 }
