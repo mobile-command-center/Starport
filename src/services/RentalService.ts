@@ -108,6 +108,7 @@ export default class RentalService {
                     console.log(JSON.stringify(error));
                     return reject(error);
                 }
+                console.log(mailOptions);
                 return resolve(info);
             });
         });

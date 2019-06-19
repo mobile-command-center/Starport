@@ -133,6 +133,7 @@ export default class TelecomService {
                 if(error) {
                     return reject(error);
                 }
+                console.log(mailOptions);
                 return resolve(info);
             });
         });
