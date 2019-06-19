@@ -180,6 +180,8 @@ export function getGiftCardNameByCode(giftCardCode: number) {
             return '신세계 상품권';
         case 2:
             return '홈플러스 상품권';
+        case 3:
+            return 'OK 캐시백';
         default:
             return '오류';
     }
