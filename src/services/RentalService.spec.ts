@@ -1,11 +1,11 @@
 import * as AWS from 'aws-sdk';
 import * as nodemailer from 'nodemailer';
 import RegisterService from './RentalService';
-import rentalFormData from '../model/RentalFormData';
+import RentalFormData from '../model/RentalFormData';
 import RentalDTO from '../model/RentalDTO';
 import RentalService from './RentalService';
 
-const LGSampleData: rentalFormData = {
+const LGSampleData: RentalFormData = {
     c_name: '테스트',
     c_tel2_type: 'LG',
     c_tel21: '010',
@@ -33,6 +33,8 @@ const LGSampleData: rentalFormData = {
     g_sp_bank_holder: '테스트',
     p_vendor: [ 'LG', '' ],
     p_product: [ '정수기', '공기청정기', '' ],
+    p_product_name: '(정수기)WD502AS, (건조기)RH16WC',
+    p_product_color: '(정수기)그레이',
     p_promise: '3년약정',
     g_bigo: '',
     w_agree: 'true' 
