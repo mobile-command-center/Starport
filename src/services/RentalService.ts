@@ -36,7 +36,7 @@ export default class RentalService {
             <h2>가전 렌탈 가입 신청서</h2>
 
             <h3>신청서 정보</h3>
-            작성 시간 : ${moment().format("YYYY년 MM월 DD일 HH시 mm분 ss초")} <br>
+            작성 시간 : ${moment().utcOffset(9).format("YYYY년 MM월 DD일 HH시 mm분 ss초")} <br>
             신청서 ID : ${uuidv1()} <br>
 
             <h3>가입자 정보</h3>
@@ -108,6 +108,7 @@ export default class RentalService {
                     console.log(JSON.stringify(error));
                     return reject(error);
                 }
+                console.log(mailOptions);
                 return resolve(info);
             });
         });
