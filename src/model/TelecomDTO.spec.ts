@@ -1,6 +1,6 @@
 import {expect} from 'chai';
 import TelecomFormData from './TelecomFormData';
-import TelecomDTO, { CustomerInfo, ProductInfo, PaybackInfo, PaymentInfo, TelephoneContractInfo } from './TelecomDTO';
+import TelecomDTO, { CustomerInfo, ProductInfo, PaybackInfo, PaymentInfo, TelephoneContractInfo, CombinationCommodityInfo } from './TelecomDTO';
 import { getBankNameByBankCode, getCardNameByCardCode, getGiftCardNameByCode } from '../../../Barracks/src/util/FinancialUtil';
 
 const LGSampleData: TelecomFormData = {
@@ -48,6 +48,7 @@ const LGSampleData: TelecomFormData = {
     g_move_tel1: '010-4073-2101',
     g_move_auth: '지로납부 뒤 네자리',
     g_move_no: '2323',
+    p_tell_combiation: '인터넷패밀리결합',
     g_bigo: '비고란이다 ㅎㅎㅎ',
     w_agree: 'true'
 }
@@ -118,5 +119,11 @@ describe('TelecomDTO', () => {
         expect(telephoneContractInfo.phoneNumber).to.equal(LGSampleData.g_move_tel1);
         expect(telephoneContractInfo.authMethod).to.equal(LGSampleData.g_move_auth);
         expect(telephoneContractInfo.authCode).to.equal(Number(LGSampleData.g_move_no));
+    });
+
+    it('getter CombinationCommodityInfo', () => {
+        const combinationCommodityInfo: CombinationCommodityInfo = telecomDTO.CombinationCommodityInfo;
+
+        expect(combinationCommodityInfo.cellPhoneCombinationInfo).to.equal(LGSampleData.p_tell_combiation);
     });
 })

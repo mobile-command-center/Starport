@@ -69,6 +69,15 @@ export default class TelecomDTO {
     }
 
     /**
+     * 결합 정보
+     */
+    public get CombinationCommodityInfo(): CombinationCommodityInfo {
+        return {
+            cellPhoneCombinationInfo: this.formData.p_tell_combiation ? this.formData.p_tell_combiation : '',
+        };
+    }
+
+    /**
      * 납부 정보
      */
      public get PaymentInfo(): PaymentInfo {
@@ -142,4 +151,8 @@ export interface TelephoneContractInfo {
     phoneNumber: string; //기존 유선전화 번호
     authMethod: string; //기존 유선전화 변경 인증방식
     authCode: number; //기존 유선전화 변경 인증번호
+}
+
+export interface CombinationCommodityInfo {
+    cellPhoneCombinationInfo: string; //휴대폰 결합 정보
 }

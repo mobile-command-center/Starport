@@ -31,6 +31,7 @@ export default class TelecomService {
         const paybackInfo = this._telecomDTO.PaybackInfo;
         const productInfo = this._telecomDTO.ProductInfo;
         const telephoneInfo = this._telecomDTO.PrevTelephoneContractInfo;
+        const commodityInfo = this._telecomDTO.CombinationCommodityInfo;
 
         let body = `<html><head></head><body>
             <h2>${this._telecomDTO.vendor} 가입 신청서</h2>
@@ -90,6 +91,11 @@ export default class TelecomService {
                 기존 전화번호 : ${telephoneInfo.phoneNumber} <br>
                 번호이동 인증: ${telephoneInfo.authMethod}(${telephoneInfo.authCode}) <br>`;
             }
+        }
+
+        if(commodityInfo.cellPhoneCombinationInfo !== '') {
+            body += `<h3>휴대폰 결합 정보</h3>
+            휴대폰 결합 정보 : ${commodityInfo.cellPhoneCombinationInfo}<br>`;
         }
         
         body += `<h3>요청사항</h3>
