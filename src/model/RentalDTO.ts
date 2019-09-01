@@ -73,7 +73,7 @@ export default class RentalDTO {
 
     //약관 동의 여부
     public get AgreeContrat(): boolean {
-        return Boolean(this.formData.w_agree);
+        return this.formData.w_agree !== 'false';
     }
 
 }
