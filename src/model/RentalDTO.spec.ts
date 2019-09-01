@@ -9,7 +9,7 @@ const LGSampleData: RentalFormData = {
     c_tel21: '010',
     c_tel22: '9312',
     c_tel23: '5123',
-    g_auth: 'true',
+    g_auth: 'false',
     c_zipcode1: '463',
     c_zipcode2: '894',
     c_address: '경기 수원시 영통구 덕영대로 1503 (영통동)',
@@ -35,7 +35,7 @@ const LGSampleData: RentalFormData = {
     p_product_color: '(정수기)그레이',
     p_promise: '3년약정',
     g_bigo: '',
-    w_agree: 'true' 
+    w_agree: 'false' 
 }
 describe('RentalDTO', () => {
     let registerDTO: RentalDTO;
@@ -50,7 +50,7 @@ describe('RentalDTO', () => {
         expect(customerInfo.name).to.equal(LGSampleData.c_name);
         expect(customerInfo.mobileCarrier).to.equal(LGSampleData.c_tel2_type);
         expect(customerInfo.mobileNumber).to.equal(`${LGSampleData.c_tel21}-${LGSampleData.c_tel22}-${LGSampleData.c_tel23}`);
-        expect(customerInfo.mobileAuth).to.equal(Boolean(LGSampleData.g_auth));
+        expect(customerInfo.mobileAuth).to.equal(LGSampleData.g_auth !== 'false');
         expect(customerInfo.zipCode).to.equal(`${LGSampleData.c_zipcode1}-${LGSampleData.c_zipcode2}`);
         expect(customerInfo.address).to.equal(LGSampleData.c_address);
         expect(customerInfo.address2).to.equal(LGSampleData.c_address2);

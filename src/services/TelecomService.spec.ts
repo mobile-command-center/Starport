@@ -12,7 +12,7 @@ const LGSampleData: TelecomFormData = {
     c_tel21: '010',
     c_tel22: '0323',
     c_tel23: '3564',
-    g_auth: 'true',
+    g_auth: 'false',
     c_tel11: '070',
     c_tel12: '4123',
     c_tel13: '6321',
@@ -51,7 +51,7 @@ const LGSampleData: TelecomFormData = {
     g_move_no: '2323',
     p_combiation: '인터넷-인터넷결합',
     g_bigo: '비고란이다 ㅎㅎㅎ',
-    w_agree: 'true'
+    w_agree: 'false'
 }
 
 AWS.config.region = 'us-west-2';

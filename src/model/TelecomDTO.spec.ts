@@ -69,7 +69,7 @@ describe('TelecomDTO', () => {
         expect(customerInfo.name).to.equal(LGSampleData.c_name);
         expect(customerInfo.mobileCarrier).to.equal(LGSampleData.c_tel2_type);
         expect(customerInfo.mobileNumber).to.equal(`${LGSampleData.c_tel21}-${LGSampleData.c_tel22}-${LGSampleData.c_tel23}`);
-        expect(customerInfo.mobileAuth).to.equal(Boolean(LGSampleData.g_auth));
+        expect(customerInfo.mobileAuth).to.equal((LGSampleData.g_auth !== 'false'));
         expect(customerInfo.emgencyNumber).to.equal(`${LGSampleData.c_tel11}-${LGSampleData.c_tel12}-${LGSampleData.c_tel13}`);
         expect(customerInfo.email).to.equal(`${LGSampleData.c_email1}@${LGSampleData.c_email2}`);
         expect(customerInfo.zipCode).to.equal(`${LGSampleData.c_zipcode1}-${LGSampleData.c_zipcode2}`);
@@ -114,7 +114,7 @@ describe('TelecomDTO', () => {
     it('getter TelephoneContractInfo', () => {
         const telephoneContractInfo: TelephoneContractInfo = telecomDTO.PrevTelephoneContractInfo;
 
-        expect(telephoneContractInfo.carrierMoveCheck).to.equal(Boolean(LGSampleData.telephone_carrier_move_chk));
+        expect(telephoneContractInfo.carrierMoveCheck).to.equal(LGSampleData.telephone_carrier_move_chk !== 'false');
         expect(telephoneContractInfo.carrier).to.equal(LGSampleData.g_move_company);
         expect(telephoneContractInfo.phoneNumber).to.equal(LGSampleData.g_move_tel1);
         expect(telephoneContractInfo.authMethod).to.equal(LGSampleData.g_move_auth);

@@ -21,7 +21,7 @@ export default class TelecomDTO {
             name: this.formData.c_name,
             mobileCarrier: this.formData.c_tel2_type,
             mobileNumber: `${this.formData.c_tel21}-${this.formData.c_tel22}-${this.formData.c_tel23}`,
-            mobileAuth: Boolean(this.formData.g_auth),
+            mobileAuth: (this.formData.g_auth !== 'false'),
             emgencyNumber: `${this.formData.c_tel11}-${this.formData.c_tel12}-${this.formData.c_tel13}`,
             email: `${this.formData.c_email1}@${this.formData.c_email2}`,
             zipCode: `${this.formData.c_zipcode1}-${this.formData.c_zipcode2}`,
@@ -48,7 +48,7 @@ export default class TelecomDTO {
     //유선 전화 이전계약 정보
     public get PrevTelephoneContractInfo(): TelephoneContractInfo {
         return {
-            carrierMoveCheck: Boolean(this.formData.telephone_carrier_move_chk),
+            carrierMoveCheck: (this.formData.telephone_carrier_move_chk !== 'false'),
             carrier: this.formData.g_move_company,
             phoneNumber: this.formData.g_move_tel1,
             authMethod: this.formData.g_move_auth,
@@ -100,7 +100,7 @@ export default class TelecomDTO {
 
     //약관 동의 여부
     public get AgreeContrat(): boolean {
-        return Boolean(this.formData.w_agree);
+        return this.formData.w_agree !== 'false';
     }
 
 }
