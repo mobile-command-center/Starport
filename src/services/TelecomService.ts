@@ -93,11 +93,11 @@ export default class TelecomService {
             }
         }
 
-        if(commodityInfo.cellPhoneCombinationInfo !== '') {
-            body += `<h3>휴대폰 결합 정보</h3>
-            휴대폰 결합 정보 : ${commodityInfo.cellPhoneCombinationInfo}<br>`;
+        if(commodityInfo && commodityInfo.CombinationOption !== '') {
+            body += `<h3>결합 정보</h3>`;
+            body += `가족 內 결합 : ${commodityInfo.CombinationOption}<br>`;
         }
-        
+
         body += `<h3>요청사항</h3>
         ${this._telecomDTO.Remarks}
         </body></html>`;

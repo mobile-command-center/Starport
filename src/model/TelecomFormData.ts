@@ -43,7 +43,7 @@ export default interface TelecomFormData {
     g_move_tel1: string; //123123
     g_move_auth: string; // 지로납부 뒤 네자리
     g_move_no: string; //2323
-    p_tell_combiation?: string; //인터넷패밀리결
+    p_combiation?: string; //인터넷-인터넷 결합
     g_bigo: string; //비고란이다 ㅎㅎㅎ
     w_agree: string; //true
 }

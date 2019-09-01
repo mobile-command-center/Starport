@@ -73,7 +73,7 @@ export default class TelecomDTO {
      */
     public get CombinationCommodityInfo(): CombinationCommodityInfo {
         return {
-            cellPhoneCombinationInfo: this.formData.p_tell_combiation ? this.formData.p_tell_combiation : '',
+            CombinationOption: this.formData.p_combiation ? this.formData.p_combiation : '',
         };
     }
 
@@ -154,5 +154,5 @@ export interface TelephoneContractInfo {
 }
 
 export interface CombinationCommodityInfo {
-    cellPhoneCombinationInfo: string; //휴대폰 결합 정보
+    CombinationOption: string; //결합 옵션
 }

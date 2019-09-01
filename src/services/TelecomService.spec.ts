@@ -49,7 +49,7 @@ const LGSampleData: TelecomFormData = {
     g_move_tel1: '010-4073-2101',
     g_move_auth: '지로납부 뒤 네자리',
     g_move_no: '2323',
-    p_tell_combiation: '인터넷패밀리결합',
+    p_combiation: '인터넷-인터넷결합',
     g_bigo: '비고란이다 ㅎㅎㅎ',
     w_agree: 'true'
 }
