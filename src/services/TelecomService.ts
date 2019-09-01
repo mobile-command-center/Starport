@@ -47,7 +47,7 @@ export default class TelecomService {
             비상연락처 : ${customerInfo.emgencyNumber} <br>
             이메일 : ${customerInfo.email} <br>
             주소 : ${customerInfo.zipCode} ${customerInfo.address} ${customerInfo.address2}<br>
-            약관 동의 : <input type="checkbox" checked="${this._telecomDTO.AgreeContrat ? 'checked' : ''}"><br>
+            약관 동의 : <input type="checkbox" ${this._telecomDTO.AgreeContrat ? 'checked' : ''}"><br>
             
             <h3>납부 정보 (${paymentInfo.paymentMethod})</h3>`;
         
