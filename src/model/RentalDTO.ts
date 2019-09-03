@@ -17,7 +17,7 @@ export default class RentalDTO {
             name: this.formData.c_name,
             mobileCarrier: this.formData.c_tel2_type,
             mobileNumber: `${this.formData.c_tel21}-${this.formData.c_tel22}-${this.formData.c_tel23}`,
-            mobileAuth: this.formData.g_auth ? true : false,
+            mobileAuth: this.formData.g_auth !== 'false' ? true : false,
             zipCode: `${this.formData.c_zipcode1}-${this.formData.c_zipcode2}`,
             address: this.formData.c_address,
             address2: this.formData.c_address2,
