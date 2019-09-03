@@ -42,12 +42,12 @@ export default class TelecomService {
 
             <h3>가입자 정보</h3>
             가입자명 : ${customerInfo.name}<br>
-            주민번호 : ${customerInfo.securityNumber.substr(0, 6)}-${customerInfo.securityNumber.substr(6)}<br>
-            휴대폰 : ${customerInfo.mobileCarrier} ${customerInfo.mobileNumber} (${customerInfo.mobileAuth ? '본인': '본안아님'}) <br>
+            주민번호 : ${customerInfo.securityNumber.substr(0, 6)}-${customerInfo.securityNumber.substr(6)} <input type="checkbox" ${(parseInt(customerInfo.securityNumber[6], 10) > 4) ? 'checked' : ''}> 외국인 <br>
+            휴대폰 : ${customerInfo.mobileCarrier} ${customerInfo.mobileNumber} (${customerInfo.mobileAuth ? '본인': '본인아님'}) <br>
             비상연락처 : ${customerInfo.emgencyNumber} <br>
             이메일 : ${customerInfo.email} <br>
             주소 : ${customerInfo.zipCode} ${customerInfo.address} ${customerInfo.address2}<br>
-            약관 동의 : <input type="checkbox" ${this._telecomDTO.AgreeContrat ? 'checked' : ''}"><br>
+            약관 동의 : <input type="checkbox" ${this._telecomDTO.AgreeContrat ? 'checked' : ''}><br>
             
             <h3>납부 정보 (${paymentInfo.paymentMethod})</h3>`;
         
