@@ -74,6 +74,10 @@ export default class TelecomService {
         if(productInfo.tv && productInfo.tv !== '') {
             body += `TV 상품 : ${productInfo.tv} <br>`;
         }
+
+        if(productInfo.tvAdd && productInfo.tvAdd !== '') {
+            body += `TV 추가설치 : ${productInfo.tvAdd} <br>`;
+        }
         
         if(productInfo.settoppBox && productInfo.settoppBox !== '') {
             body += `셋텁박스 상품 : ${productInfo.settoppBox} <br>`;

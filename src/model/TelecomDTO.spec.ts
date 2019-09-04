@@ -40,6 +40,7 @@ const LGSampleData: TelecomFormData = {
     g_sp_giftcard_code: '1',
     board_internet: '와이파이기본_광랜안심(100M)',
     board_tv: 'TV베이직 - 183채널',
+    board_tv_add: '1대',
     board_tel: 'WiFi(무선)전화 - 번호이동Y',
     board_settop: 'UHD셋탑',
     board_wifi: '신청',
@@ -96,6 +97,7 @@ describe('TelecomDTO', () => {
 
         expect(productInfo.internet).to.equal(LGSampleData.board_internet);
         expect(productInfo.tv).to.equal(LGSampleData.board_tv);
+        expect(productInfo.tvAdd).to.equal(LGSampleData.board_tv_add);
         expect(productInfo.telephone).to.equal(LGSampleData.board_tel);
         expect(productInfo.settoppBox).to.equal(LGSampleData.board_settop);
         expect(productInfo.wireless).to.equal(LGSampleData.board_wifi);

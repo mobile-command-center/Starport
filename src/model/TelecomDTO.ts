@@ -38,6 +38,7 @@ export default class TelecomDTO {
         return {
             internet: this.formData.board_internet,
             tv: this.formData.board_tv,
+            tvAdd: this.formData.board_tv_add,
             telephone: this.formData.board_tel,
             settoppBox: this.formData.board_settop,
             wireless: this.formData.board_wifi,
@@ -121,6 +122,7 @@ export interface CustomerInfo {
 export interface ProductInfo {
     internet: string; //인터넷 가입 상품
     tv: string; //TV가입 상품
+    tvAdd: string; //TV추가설치대수
     telephone: string; //전화 상품
     settoppBox: string; //셋텁박스
     wireless: string; //와이파이
