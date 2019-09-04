@@ -35,6 +35,7 @@ export default interface TelecomFormData {
     g_sp_giftcard_code: string; //1, 2
     board_internet: string; //와이파이기본_광랜안심(100M)
     board_tv: string; //TV베이직 - 183채널
+    board_tv_add: string; //1대
     board_tel: string; //WiFi(무선)전화 - 번호이동Y
     board_settop: string; //UHD셋탑
     board_wifi: string; //신청

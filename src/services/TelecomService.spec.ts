@@ -41,6 +41,7 @@ const LGSampleData: TelecomFormData = {
     g_sp_giftcard_code: '1',
     board_internet: '와이파이기본_광랜안심(100M)',
     board_tv: 'TV베이직 - 183채널',
+    board_tv_add: '1대',
     board_tel: 'WiFi(무선)전화 - 번호이동Y',
     board_settop: 'UHD셋탑',
     board_wifi: '신청',
