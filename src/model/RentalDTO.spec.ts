@@ -15,6 +15,7 @@ const LGSampleData: RentalFormData = {
     c_address: '경기 수원시 영통구 덕영대로 1503 (영통동)',
     c_address2: '411동 104호',
     c_jumin1: '190128',
+    c_gender: '남',
     g_payment_method: '계좌이체',
     g_bank_cd: '4',
     g_bank_no: '620-209007-853',
@@ -55,6 +56,7 @@ describe('RentalDTO', () => {
         expect(customerInfo.address).to.equal(LGSampleData.c_address);
         expect(customerInfo.address2).to.equal(LGSampleData.c_address2);
         expect(customerInfo.birthday).to.equal(`${LGSampleData.c_jumin1}`);
+        expect(customerInfo.gender).to.equal(`${LGSampleData.c_gender}`);
     });
 
     it('getter PaymentInfo', () => {

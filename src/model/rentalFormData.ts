@@ -10,6 +10,7 @@ export default interface RentalFormData {
     c_address: string; //대구시 동구 신천3동 화성파크드림 133동 1201호
     c_address2: string; //133동 1201호
     c_jumin1: string; //880512
+    c_gender: string; //남
     g_payment_method: string; //은행
     g_bank_cd: string; //4
     g_bank_no: string; //620-239007-853
