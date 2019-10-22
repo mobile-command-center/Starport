@@ -21,7 +21,8 @@ export default class RentalDTO {
             zipCode: `${this.formData.c_zipcode1}-${this.formData.c_zipcode2}`,
             address: this.formData.c_address,
             address2: this.formData.c_address2,
-            birthday: `${this.formData.c_jumin1}`
+            birthday: `${this.formData.c_jumin1}`,
+            gender: `${this.formData.c_gender}`
         }
     }
 
@@ -86,7 +87,8 @@ export interface CustomerInfo {
     zipCode: string; //우편번호
     address: string; //주소
     address2: string; //상세 주소
-    birthday: string //생년월일
+    birthday: string; //생년월일
+    gender: string; //성별
 }
 
 export interface ProductInfo {

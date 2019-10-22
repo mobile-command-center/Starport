@@ -42,6 +42,7 @@ export default class RentalService {
             <h3>가입자 정보</h3>
             가입자명 : ${customerInfo.name}<br>
             생년월일 : ${customerInfo.birthday}<br>
+            성별 : ${customerInfo.gender}<br>
             휴대폰 : ${customerInfo.mobileCarrier} ${customerInfo.mobileNumber} (${customerInfo.mobileAuth ? '본인': '본안아님'}) <br>
             주소 : ${customerInfo.zipCode} ${customerInfo.address} ${customerInfo.address2}<br>
             약관 동의 : <input type="checkbox" ${this._rentalDTO.AgreeContrat ? 'checked' : ''}"><br>
