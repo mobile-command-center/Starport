@@ -22,6 +22,7 @@ export default class TelecomDTO {
             mobileCarrier: this.formData.c_tel2_type,
             mobileNumber: `${this.formData.c_tel21}-${this.formData.c_tel22}-${this.formData.c_tel23}`,
             mobileAuth: (this.formData.g_auth !== 'false'),
+            consultNumber: this.formData.c_tel31 ? `${this.formData.c_tel31}-${this.formData.c_tel32}-${this.formData.c_tel33}` : '미입력',
             emgencyNumber: `${this.formData.c_tel11}-${this.formData.c_tel12}-${this.formData.c_tel13}`,
             email: `${this.formData.c_email1}@${this.formData.c_email2}`,
             zipCode: `${this.formData.c_zipcode1}-${this.formData.c_zipcode2}`,
@@ -111,6 +112,7 @@ export interface CustomerInfo {
     mobileCarrier: string; //통신사
     mobileNumber: string; //핸드폰 번호
     mobileAuth: boolean; //본인 여부
+    consultNumber: string; //핸드폰 번호
     emgencyNumber: string; //비상연락처
     email: string; //이메일 주소
     zipCode: string; //우편번호

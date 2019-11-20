@@ -44,6 +44,7 @@ export default class TelecomService {
             가입자명 : ${customerInfo.name}<br>
             주민번호 : ${customerInfo.securityNumber.substr(0, 6)}-${customerInfo.securityNumber.substr(6)} <input type="checkbox" ${(parseInt(customerInfo.securityNumber[6], 10) > 4) ? 'checked' : ''}> 외국인 <br>
             휴대폰 : ${customerInfo.mobileCarrier} ${customerInfo.mobileNumber} (${customerInfo.mobileAuth ? '본인': '본인아님'}) <br>
+            상담받은 연락처 : ${customerInfo.consultNumber} <br>
             비상연락처 : ${customerInfo.emgencyNumber} <br>
             이메일 : ${customerInfo.email} <br>
             주소 : ${customerInfo.zipCode} ${customerInfo.address} ${customerInfo.address2}<br>

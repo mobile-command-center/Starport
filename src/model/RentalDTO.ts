@@ -18,6 +18,7 @@ export default class RentalDTO {
             mobileCarrier: this.formData.c_tel2_type,
             mobileNumber: `${this.formData.c_tel21}-${this.formData.c_tel22}-${this.formData.c_tel23}`,
             mobileAuth: this.formData.g_auth !== 'false' ? true : false,
+            consultNumber: this.formData.c_tel31 ?`${this.formData.c_tel31}-${this.formData.c_tel32}-${this.formData.c_tel33}` : '미입력',
             zipCode: `${this.formData.c_zipcode1}-${this.formData.c_zipcode2}`,
             address: this.formData.c_address,
             address2: this.formData.c_address2,
@@ -84,6 +85,7 @@ export interface CustomerInfo {
     mobileCarrier: string; //통신사
     mobileNumber: string; //핸드폰 번호
     mobileAuth: boolean; //본인 여부
+    consultNumber: string; //상담받은연락처
     zipCode: string; //우편번호
     address: string; //주소
     address2: string; //상세 주소

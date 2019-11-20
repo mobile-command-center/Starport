@@ -12,6 +12,9 @@ const LGSampleData: TelecomFormData = {
     c_tel22: '0323',
     c_tel23: '3564',
     g_auth: 'true',
+    c_tel31: '010',
+    c_tel32: '0323',
+    c_tel33: '3564',
     c_tel11: '070',
     c_tel12: '4123',
     c_tel13: '6321',
@@ -70,6 +73,7 @@ describe('TelecomDTO', () => {
         expect(customerInfo.name).to.equal(LGSampleData.c_name);
         expect(customerInfo.mobileCarrier).to.equal(LGSampleData.c_tel2_type);
         expect(customerInfo.mobileNumber).to.equal(`${LGSampleData.c_tel21}-${LGSampleData.c_tel22}-${LGSampleData.c_tel23}`);
+        expect(customerInfo.consultNumber).to.equal(`${LGSampleData.c_tel31}-${LGSampleData.c_tel32}-${LGSampleData.c_tel33}`);
         expect(customerInfo.mobileAuth).to.equal((LGSampleData.g_auth !== 'false'));
         expect(customerInfo.emgencyNumber).to.equal(`${LGSampleData.c_tel11}-${LGSampleData.c_tel12}-${LGSampleData.c_tel13}`);
         expect(customerInfo.email).to.equal(`${LGSampleData.c_email1}@${LGSampleData.c_email2}`);

@@ -44,6 +44,7 @@ export default class RentalService {
             생년월일 : ${customerInfo.birthday}<br>
             성별 : ${customerInfo.gender}<br>
             휴대폰 : ${customerInfo.mobileCarrier} ${customerInfo.mobileNumber} (${customerInfo.mobileAuth ? '본인': '본안아님'}) <br>
+            상담받은 연락처 : ${customerInfo.consultNumber} <br>
             주소 : ${customerInfo.zipCode} ${customerInfo.address} ${customerInfo.address2}<br>
             약관 동의 : <input type="checkbox" ${this._rentalDTO.AgreeContrat ? 'checked' : ''}><br>
             
