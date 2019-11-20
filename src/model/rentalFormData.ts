@@ -5,6 +5,9 @@ export default interface RentalFormData {
     c_tel22: string; //9361
     c_tel23: string; //3291
     g_auth?: string; //본인
+    c_tel31: string; //010 상담받은연락처
+    c_tel32: string; //9361
+    c_tel33: string; //3291
     c_zipcode1: string; //463
     c_zipcode2: string; //894
     c_address: string; //대구시 동구 신천3동 화성파크드림 133동 1201호

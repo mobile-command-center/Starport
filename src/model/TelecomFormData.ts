@@ -7,7 +7,10 @@ export default interface TelecomFormData {
     c_tel22: string; //9361
     c_tel23: string; //3291
     g_auth: string; //본인
-    c_tel11: string; //070
+    c_tel31: string; //010 //상담받은 연락처
+    c_tel32: string; //9361
+    c_tel33: string; //3291
+    c_tel11: string; //070 //비상 연락처
     c_tel12: string; //0982
     c_tel13: string; //6635
     c_email1: string; //killoe
