@@ -46,7 +46,7 @@ export default class RentalService {
             휴대폰 : ${customerInfo.mobileCarrier} ${customerInfo.mobileNumber} (${customerInfo.mobileAuth ? '본인': '본안아님'}) <br>
             상담받은 연락처 : ${customerInfo.consultNumber} <br>
             주소 : ${customerInfo.zipCode} ${customerInfo.address} ${customerInfo.address2}<br>
-            약관 동의 : <input type="checkbox" ${this._rentalDTO.AgreeContrat ? 'checked' : ''}><br>
+            약관 동의 : ${this._rentalDTO.AgreeContrat ? '동의합니다.' : '비동의 합니다.'}<br>
             
             <h3>납부 정보 (${paymentInfo.paymentMethod})</h3>`;
         
