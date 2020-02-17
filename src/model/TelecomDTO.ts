@@ -1,5 +1,5 @@
 import TelecomFormData from './TelecomFormData';
-import { getBankNameByBankCode, getCardNameByCardCode, getGiftCardNameByCode } from '../../../Barracks/src/util/FinancialUtil';
+import { getBankNameByBankCode, getCardNameByCardCode, getGiftCardNameByCode } from '../utils/FinancialUtil';
 
 export default class TelecomDTO {
     private formData: TelecomFormData;

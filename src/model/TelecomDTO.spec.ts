@@ -1,7 +1,7 @@
 import {expect} from 'chai';
 import TelecomFormData from './TelecomFormData';
 import TelecomDTO, { CustomerInfo, ProductInfo, PaybackInfo, PaymentInfo, TelephoneContractInfo, CombinationCommodityInfo } from './TelecomDTO';
-import { getBankNameByBankCode, getCardNameByCardCode, getGiftCardNameByCode } from '../../../Barracks/src/util/FinancialUtil';
+import { getBankNameByBankCode, getCardNameByCardCode, getGiftCardNameByCode } from '../utils/FinancialUtil';
 
 const LGSampleData: TelecomFormData = {
     vendor: 'LG',

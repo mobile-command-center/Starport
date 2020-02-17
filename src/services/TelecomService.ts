@@ -46,7 +46,7 @@ export default class TelecomService {
             휴대폰 : ${customerInfo.mobileCarrier} ${customerInfo.mobileNumber} (${customerInfo.mobileAuth ? '본인': '본인아님'}) <br>
             상담받은 연락처 : ${customerInfo.consultNumber} <br>
             비상연락처 : ${customerInfo.emgencyNumber} <br>
-            이메일 : ${customerInfo.email} <br>Fd
+            이메일 : ${customerInfo.email} <br>
             주소 : ${customerInfo.zipCode} ${customerInfo.address} ${customerInfo.address2}<br>
             약관 동의 : ${this._telecomDTO.AgreeContrat ? '동의합니다.' : '비동의 합니다.'}<br>
             
