@@ -62,7 +62,7 @@ export default class TelecomService {
 
         body+= `<h3>사은품 정보</h3>
         상품권 종류 : ${paybackInfo.giftCardName} <br>
-        계좌번호 : <${paybackInfo.bankName}> ${paybackInfo.accountNumber} <br>
+        계좌번호 : (${paybackInfo.bankName}) ${paybackInfo.accountNumber} <br>
         예금주 : ${paybackInfo.accountHolder} <br>
 
         <h3>상품 정보</h3>
