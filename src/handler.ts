@@ -12,7 +12,7 @@ import BodyParser from './utils/bodyParser';
 AWS.config.region = 'us-west-2';
 const mailInfo = {
   from: "support@ajungweb.co.kr",
-  to: "pursuelowprice@naver.com"
+  to: "kajkaj0815@gmail.com"
 }
 
 export const rentalRegister: Handler = async (event: APIGatewayEvent) => {

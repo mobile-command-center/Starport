@@ -141,10 +141,11 @@ export default class TelecomService {
             };
 
             this._transporter.sendMail(mailOptions, (error: any, info: any) => {
+                console.log(mailOptions);
                 if(error) {
+                    console.log(JSON.stringify(error));
                     return reject(error);
                 }
-                console.log(mailOptions);
                 return resolve(info);
             });
         });
