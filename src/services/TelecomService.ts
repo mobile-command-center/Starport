@@ -98,9 +98,15 @@ export default class TelecomService {
             }
         }
 
-        if(commodityInfo && commodityInfo.CombinationOption !== '') {
+        if(commodityInfo && (commodityInfo.CombinationOption || commodityInfo.ktUser)) {
             body += `<h3>결합 정보</h3>`;
-            body += `가족 內 결합 : ${commodityInfo.CombinationOption}<br>`;
+            if(commodityInfo.CombinationOption !== '') {
+                body += `가족 內 결합 : ${commodityInfo.CombinationOption}<br>`;
+            }
+
+            if(commodityInfo.ktUser !== '') {
+                body += `기존KT유무 : ${commodityInfo.ktUser}<br>`;
+            }
         }
 
         body += `<h3>요청사항</h3>
