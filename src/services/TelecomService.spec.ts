@@ -54,6 +54,7 @@ const LGSampleData: TelecomFormData = {
     g_move_auth: '지로납부 뒤 네자리',
     g_move_no: '2323',
     p_combiation: '인터넷-인터넷결합',
+    p_kt_user: '기존KT사용',
     g_bigo: '비고란이다 ㅎㅎㅎ',
     w_agree: 'false'
 }

@@ -48,6 +48,7 @@ export default interface TelecomFormData {
     g_move_auth: string; // 지로납부 뒤 네자리
     g_move_no: string; //2323
     p_combiation?: string; //인터넷-인터넷 결합
+    p_kt_user?: string; //기존 KT유무
     g_bigo: string; //비고란이다 ㅎㅎㅎ
     w_agree: string; //true
 }

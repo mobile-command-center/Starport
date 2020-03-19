@@ -76,6 +76,7 @@ export default class TelecomDTO {
     public get CombinationCommodityInfo(): CombinationCommodityInfo {
         return {
             CombinationOption: this.formData.p_combiation ? this.formData.p_combiation : '',
+            ktUser: this.formData.p_kt_user ? this.formData.p_kt_user : '',
         };
     }
 
@@ -159,4 +160,5 @@ export interface TelephoneContractInfo {
 
 export interface CombinationCommodityInfo {
     CombinationOption: string; //결합 옵션
+    ktUser: string; //Skylife전용 기존KT유무
 }
